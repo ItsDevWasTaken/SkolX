@@ -30,5 +30,5 @@ Altogether it is a very well-rounded software for easily installing important pr
   • TTB / Translucent Task Bar
 ```
 ## Övrig information:
-SkolX är gjort (som jag tidigare sagt) gjort för att underlätta användarupplevelsen för elever men samtidigt lära sig något.
-Pågrund av att du kollar här på GitHub så antar jag att du är tillräckligt smart för att inte vara en idiot så nu ska du få göra vad en ville göra.
+SkolX är (som jag tidigare sagt) gjort för att underlätta användarupplevelsen för elever men samtidigt lära sig något.
+På grund av att du kollar här på GitHub så antar jag att du är tillräckligt smart för att inte vara en idiot så nu ska du få göra vad än ville göra.
