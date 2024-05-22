@@ -67,11 +67,15 @@ function pyinstall() {
 async function pAIinstall() {
 	const zip_path = (await resolveResource('assets/plAIground.zip')).slice(4);
 
+	const load_path = (await resolveResource('assets/load_path.ps1')).slice(4);
+
 	changeCurrentTask('Installerar...', true);
 
-	invoke('pai_install', { zipPath: zip_path }).then(function () {
-		changeCurrentTask('Ingen nuvarande uppgift', false);
-	});
+	invoke('pai_install', { zipPath: zip_path, loadPath: load_path }).then(
+		function () {
+			changeCurrentTask('Ingen nuvarande uppgift', false);
+		}
+	);
 }
 
 async function chromeInstall() {

@@ -8,17 +8,14 @@ use window_shadows::set_shadow;
 use zip_extensions::zip_extract;
 
 #[tauri::command]
-async fn pai_install(zip_path: String) {
+async fn pai_install(zip_path: String, load_path: String) {
     let zip_path = PathBuf::from_str(&zip_path).expect("Failed to get zip file path!");
     let target_path = PathBuf::from_str("C:\\").expect("Failed to get zip target path!");
 
     zip_extract(&zip_path, &target_path).unwrap();
 
     Command::new("powershell.exe")
-        .args([
-            "$PATH = [Environment]::GetEnvironmentVariable('PATH', 'user')",
-            "[Environment]::SetEnvironmentVariable('PATH', '$PATH;C:\\plAIground', 'user')",
-        ])
+        .arg(load_path)
         .spawn()
         .expect("Failed to execute load path command!");
 }
