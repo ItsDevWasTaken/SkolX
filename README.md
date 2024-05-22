@@ -1,4 +1,7 @@
-![SkolX logo](https://media.discordapp.net/attachments/1232334035309690943/1242517379276083291/skolx.png?ex=664e1ffc&is=664cce7c&hm=5315832f827ee189efc53fa746a1f0f8d57ad316e69f3e73a05638fe6ec40696&=&format=webp&quality=lossless&width=1238&height=501)
+<div align="center">
+  <img src="https://media.discordapp.net/attachments/1232334035309690943/1242517379276083291/skolx.png?ex=664e1ffc&is=664cce7c&hm=5315832f827ee189efc53fa746a1f0f8d57ad316e69f3e73a05638fe6ec40696&=&format=webp&quality=lossless&width=1238&height=501" height="167" width="412">
+</div>
+
 # English
 ### SkolX is a program made for easily installing both programs in the X series and more.
 ## Available programs:
