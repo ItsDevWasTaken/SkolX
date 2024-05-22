@@ -1,0 +1,143 @@
+.settinglist {
+	padding: 30px;
+	display: flex;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100dvh;
+	margin-top: 0px;
+	width: 80%;
+}
+.installbutton {
+	height: 35px;
+	width: 35px;
+	margin-left: 10px;
+	background-color: transparent;
+	border: none;
+	border-radius: 13px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out, width 0.2s ease-in-out,
+		height 0.2s ease-in-out;
+}
+.installbutton:hover {
+	width: 36px;
+	height: 36px;
+	background-color: rgba(85, 85, 85, 0.125);
+	border-top: 1px rgba(255, 255, 255, 0.1) solid;
+}
+.listitem {
+	display: flex;
+	align-items: center;
+	background-color: rgba(31, 31, 31, 0.1);
+	border-radius: 10px;
+	width: 80%;
+	justify-content: center;
+	margin-top: 20px;
+	height: 50px;
+	transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out,
+		height 0.3s ease-in-out;
+	border: 1px rgba(255, 255, 255, 0.05) solid;
+}
+.listitem:hover {
+	border: 1px solid transparent;
+	background-color: rgba(102, 102, 102, 0.2);
+	border-top: 1.5px rgba(255, 255, 255, 0.05) solid;
+	width: 82%;
+}
+.listlabel {
+	font-weight: 500;
+}
+#progress-bar {
+	width: 100dvw;
+	height: 60px;
+	display: flex;
+	align-self: flex-end;
+	position: fixed;
+	background-color: rgba(20, 20, 20, 0.125);
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	overflow-y: scroll;
+	border-top: 1px solid rgba(255, 255, 255, 0.075);
+	border-radius: 10px;
+	transition: all 0.2s ease-in-out;
+}
+#progress-bar:hover {
+	background-color: rgba(71, 71, 71, 0.125);
+	height: 63px;
+}
+#loading-icon {
+	fill: white;
+	animation-name: loading-spin;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	margin-right: 10px;
+	display: none;
+}
+@keyframes loading-spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.titlebar-button {
+	background-color: rgba(15, 15, 15, 0.125);
+	width: 35px;
+	height: 30px;
+	margin-top: 3px;
+	display: flex;
+	fill: white;
+	align-items: center;
+	transition: background-color 0.2s ease-in-out;
+	justify-content: center;
+}
+.titlebar-button:hover {
+	background-color: rgba(80, 80, 80, 0.125);
+}
+#minimize {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top: 1px rgba(255, 255, 255, 0.05) solid;
+	border-bottom: 1px rgba(255, 255, 255, 0.05) solid;
+	border-left: 1px rgba(255, 255, 255, 0.05) solid;
+	border-right: none;
+}
+#close {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top: 1px rgba(255, 255, 255, 0.05) solid;
+	border-right: 1px rgba(255, 255, 255, 0.05) solid;
+	border-bottom: 1px rgba(255, 255, 255, 0.05) solid;
+	border-left: none;
+	margin-right: 15px;
+}
+#close:hover {
+	background-color: rgba(233, 70, 70, 0.25);
+}
+#logo-container {
+	border-radius: 10px;
+	transition: background-color 0.3s ease-in-out;
+	display: flex;
+	align-items: center;
+	height: 110px;
+	width: 225px;
+	justify-content: center;
+	border-top: 1px solid transparent;
+}
+#logo-container:hover {
+	background-color: rgba(143, 143, 143, 0.125);
+	border-top: rgba(255, 255, 255, 0.1) 1px solid;
+}
+main {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+#logo {
+	transition: width 0.25s ease-in-out;
+}
+#logo:hover {
+	width: 205px;
+}

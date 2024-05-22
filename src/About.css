@@ -1,0 +1,61 @@
+#close {
+	height: 32px;
+	width: 32px;
+	fill: white;
+	display: flex;
+	align-items: center;
+	background-color: rgba(15, 15, 15, 0.125);
+	margin-right: 12px;
+	padding: 0px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	border-radius: 7px;
+	justify-content: center;
+	transition: background-color 0.2s ease-in-out;
+}
+#close:hover {
+	background-color: rgba(233, 70, 70, 0.25);
+}
+#header {
+	font-size: 47px;
+	height: fit-content;
+	display: flex;
+	width: fit-content;
+	margin-bottom: 0px;
+}
+#titlebar {
+	margin-top: 0px !important;
+	height: 42.5px !important;
+	align-items: flex-end;
+}
+p {
+	font-weight: 400;
+	font-size: small;
+	color: rgba(255, 255, 255, 0.185);
+	display: flex;
+	align-self: center;
+}
+#info {
+	display: flex;
+	height: fit-content;
+	width: fit-content;
+	flex-direction: column;
+	margin-top: 5px;
+	text-align: center;
+	padding: 0px;
+	align-items: center;
+}
+main {
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	width: 100dvw;
+	height: 100dvh;
+	display: flex;
+}
+#about-background {
+	width: 100dvw;
+	height: 100dvh;
+	backdrop-filter: url(#about-background-effect) grayscale() brightness(30%);
+	position: fixed;
+	pointer-events: none;
+}

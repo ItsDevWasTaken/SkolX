@@ -1,0 +1,67 @@
+{
+	"build": {
+		"beforeDevCommand": "npm run dev",
+		"beforeBuildCommand": "npm run build",
+		"devPath": "http://localhost:1420",
+		"distDir": "../dist"
+	},
+	"package": {
+		"productName": "SkolX",
+		"version": "0.0.1"
+	},
+	"tauri": {
+		"allowlist": {
+			"all": false,
+			"shell": {
+				"all": false,
+				"open": true
+			},
+			"window": {
+				"close": true,
+				"minimize": true,
+				"startDragging": true,
+				"create": true
+			},
+			"fs": {
+				"all": true
+			},
+			"path": {
+				"all": true
+			}
+		},
+		"windows": [
+			{
+				"title": "SkolX",
+				"width": 900,
+				"height": 600,
+				"minHeight": 600,
+				"minWidth": 900,
+				"decorations": false,
+				"maximizable": false,
+				"maxHeight": 800,
+				"maxWidth": 1300
+			}
+		],
+		"security": {
+			"csp": null
+		},
+		"bundle": {
+			"active": true,
+			"targets": "all",
+			"identifier": "com.skolx.www",
+			"icon": [
+				"icons/32x32.png",
+				"icons/128x128.png",
+				"icons/128x128@2x.png",
+				"icons/icon.icns",
+				"icons/icon.ico"
+			],
+			"resources": [
+				"assets/load_path.ps1",
+				"assets/plAIground.zip",
+				"assets/NompX.zip",
+				"assets/Rainmeter.zip"
+			]
+		}
+	}
+}

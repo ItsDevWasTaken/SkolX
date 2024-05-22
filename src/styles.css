@@ -1,0 +1,30 @@
+body {
+	margin: 0px;
+	overflow-x: hidden;
+	user-select: none;
+}
+:root {
+	color: white;
+	font-family: Segoe UI;
+	display: flex;
+	font-weight: 500;
+	background-color: rgb(12, 39, 43);
+}
+::-webkit-scrollbar {
+	display: none;
+}
+#titlebar {
+	margin-top: 7.5px;
+	width: 100dvw;
+	height: 35px;
+	position: fixed;
+	display: flex;
+	justify-content: flex-end;
+}
+#background {
+	width: 100dvw;
+	height: 100dvh;
+	backdrop-filter: url(#background-effect) grayscale() brightness(20%);
+	position: fixed;
+	pointer-events: none;
+}
