@@ -11,14 +11,19 @@ async function desktopinstall() {
 		await resolveResource('assets/rainmeter.zip')
 	).slice(4);
 
-	invoke('desktopinstall', { rainmeterZipPath: rainmeter_zip_path }).then(
-		(output) => {
-			changeCurrentTask(output as string, false);
-			setTimeout(() => {
-				changeCurrentTask('Ingen nuvarande uppgift', false);
-			}, 10000);
-		}
+	let add_start_path = (await resolveResource('assets/add_to_start.ps1')).slice(
+		4
 	);
+
+	invoke('desktopinstall', {
+		rainmeterZipPath: rainmeter_zip_path,
+		addStartPath: add_start_path,
+	}).then((output) => {
+		changeCurrentTask(output as string, false);
+		setTimeout(() => {
+			changeCurrentTask('Ingen nuvarande uppgift', false);
+		}, 10000);
+	});
 }
 
 function changeCurrentTask(task: string, activateLoading: boolean) {

@@ -53,7 +53,7 @@ async fn chrome_install() -> String {
 }
 
 #[tauri::command]
-async fn desktopinstall(rainmeter_zip_path: String) -> String {
+async fn desktopinstall(rainmeter_zip_path: String, add_start_path: String) -> String {
     let mut output = String::new();
 
     let mut ttbinstallcmd = Command::new("winget")
@@ -107,6 +107,11 @@ async fn desktopinstall(rainmeter_zip_path: String) -> String {
     }
 
     let rainmeter_path = PathBuf::from_str("C:\\Rainmeter").unwrap();
+
+    Command::new("powershell")
+        .arg(add_start_path)
+        .spawn()
+        .expect("Failed to add Rainmeter to start menu!");
 
     let result = zip_extract(
         &PathBuf::from_str(&rainmeter_zip_path).unwrap(),

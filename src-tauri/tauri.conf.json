@@ -60,7 +60,8 @@
 				"assets/load_path.ps1",
 				"assets/plAIground.zip",
 				"assets/NompX.zip",
-				"assets/Rainmeter.zip"
+				"assets/Rainmeter.zip",
+				"assets/add_to_start.ps1"
 			]
 		}
 	}
