@@ -2,7 +2,6 @@ import { emit } from '@tauri-apps/api/event';
 import './About.css';
 import { appWindow } from '@tauri-apps/api/window';
 import { getVersion } from '@tauri-apps/api/app';
-import { useEffect } from 'react';
 
 document.addEventListener('DOMContentLoaded', async function () {
 	emit('about_apply_acrylic');
@@ -26,20 +25,6 @@ function closeAbout() {
 }
 
 function About() {
-	let noiseSeed;
-
-	useEffect(() => {
-		noiseSeed = localStorage.getItem('noise_seed');
-
-		if (!noiseSeed) {
-			localStorage.setItem(
-				'noise_seed',
-				Math.floor(Math.random() * 999999).toString()
-			);
-			noiseSeed = localStorage.getItem('noise_seed');
-		}
-	});
-
 	return (
 		<main>
 			<div data-tauri-drag-region id="titlebar">
@@ -65,11 +50,11 @@ function About() {
 			<svg width={0} height={0} xmlns="http://www.w3.org/2000/svg">
 				<filter id="about-background-effect" x={0} y={0}>
 					<feTurbulence
-						baseFrequency={0.0005}
+						baseFrequency={0.002}
 						result="turbulence1"
-						seed={noiseSeed}
+						seed={3127368}
 					/>
-					<feGaussianBlur in="turbulence1" stdDeviation={300} />
+					<feGaussianBlur in="turbulence1" stdDeviation={500} />
 				</filter>
 			</svg>
 		</main>

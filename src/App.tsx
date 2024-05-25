@@ -2,7 +2,6 @@ import { invoke } from '@tauri-apps/api/tauri';
 import { appWindow, WebviewWindow } from '@tauri-apps/api/window';
 import './App.css';
 import { resolveResource } from '@tauri-apps/api/path';
-import { useEffect } from 'react';
 
 async function desktopinstall() {
 	changeCurrentTask('Installerar...', true);
@@ -111,19 +110,6 @@ async function aboutOpen() {
 }
 
 function App() {
-	let noiseSeed;
-
-	useEffect(() => {
-		noiseSeed = localStorage.getItem('noise_seed');
-
-		if (!noiseSeed) {
-			localStorage.setItem(
-				'noise_seed',
-				Math.floor(Math.random() * 999999).toString()
-			);
-		}
-	});
-
 	return (
 		<main>
 			<div data-tauri-drag-region id="titlebar">
@@ -361,9 +347,9 @@ function App() {
 					<feTurbulence
 						baseFrequency={0.0005}
 						result="turbulence1"
-						seed={noiseSeed}
+						seed={49152458}
 					/>
-					<feGaussianBlur in="turbulence1" stdDeviation={350} />
+					<feGaussianBlur in="turbulence1" stdDeviation={600} />
 				</filter>
 			</svg>
 		</main>
