@@ -9,13 +9,13 @@
 - Chrome
 - plAIground
 - Livley Wallpapers
-- Rainmeter (Med Mond förinstallerad.)
+- Rainmeter (Med Mond förinstallerat)
 - TTB / Translucent Task Bar
 
 ## Övrig information:
 
-SkolX är (som jag tidigare sagt) gjort för att underlätta användarupplevelsen för elever men samtidigt lära sig något.
-På grund av att du kollar här på GitHub så antar jag att du nog redan vet vad du gör så ladda ned SkolX och ge det en stjärna.
+SkolX (som jag tidigare sagt) är gjort för att underlätta användarupplevelsen för elever men samtidigt göra så man lär sig något.
+På grund av att du kollar här på GitHub så antar jag att du nog redan vet vad du gör så ladda ned SkolX, ge det en stjärna och fortsätt gör det du skulle göra.
 
 ### Ansvariga:
 
