@@ -6,6 +6,8 @@
 
 ## Program katalog:
 
+- NompX
+- Python
 - Chrome
 - plAIground
 - Livley Wallpapers
