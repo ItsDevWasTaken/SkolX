@@ -1,4 +1,4 @@
-<div align="center">
+⁸<div align="center">
   <img src="https://media.discordapp.net/attachments/1232334035309690943/1242517379276083291/skolx.png?ex=664e1ffc&is=664cce7c&hm=5315832f827ee189efc53fa746a1f0f8d57ad316e69f3e73a05638fe6ec40696&=&format=webp&quality=lossless&width=1238&height=501" height="167" width="412">
 </div>
 
@@ -22,5 +22,5 @@ På grund av att du kollar här på GitHub så antar jag att du nog redan vet va
 ### Ansvariga:
 
 - Huvudutvecklare: Its Dev
-- Main Designer and helper: Really Super Otter
+- Main Designer och medhjälpare: Really Super Otter
 - Mer: Sqwaltz
