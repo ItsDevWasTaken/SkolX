@@ -53,9 +53,7 @@ async fn chrome_install() -> String {
 }
 
 #[tauri::command]
-async fn desktopinstall(rainmeter_zip_path: String, add_start_path: String) -> String {
-    let mut output = String::new();
-
+async fn ttb_install() -> String {
     let mut ttbinstallcmd = Command::new("winget")
         .args([
             "install",
@@ -71,16 +69,19 @@ async fn desktopinstall(rainmeter_zip_path: String, add_start_path: String) -> S
         .expect("Failed to return status for TranslucentTB");
 
     if ttb_status.success() {
-        output.push_str("Installationen av TranslucentTB var framgångsrik, ")
+        return "Installationen av TranslucentTB var framgångsrik, ".to_string();
     } else if ttb_status.to_string() == "exit code: 0x8a15002b" {
-        output.push_str("TranslucentTB är redan installerat, ")
+        return "TranslucentTB är redan installerat, ".to_string();
     } else {
-        output.push_str(&format!(
+        return format!(
             "Installationen av TranslucentTB misslyckades, {}, ",
-            &ttb_status.to_string(),
-        ));
+            ttb_status.to_string()
+        );
     }
+}
 
+#[tauri::command]
+async fn lively_install() -> String {
     let mut livelyinstallcmd = Command::new("winget")
         .args([
             "install",
@@ -96,16 +97,19 @@ async fn desktopinstall(rainmeter_zip_path: String, add_start_path: String) -> S
         .expect("Failed to return status for Lively Wallpaper");
 
     if lively_status.success() {
-        output.push_str("Installationen av Lively Wallpaper var framgångsrik, ")
+        return "Installationen av Lively Wallpaper var framgångsrik, ".to_string();
     } else if lively_status.to_string() == "exit code: 0x8a15002b" {
-        output.push_str("Lively Wallpaper är redan installerat, ");
+        return "Lively Wallpaper är redan installerat, ".to_string();
     } else {
-        output.push_str(&format!(
+        return format!(
             "Installationen av Lively Wallpaper misslyckades, {}, ",
             &lively_status.to_string()
-        ))
+        );
     }
+}
 
+#[tauri::command]
+async fn rm_install(rainmeter_zip_path: String, add_start_path: String) -> String {
     let rainmeter_path = PathBuf::from_str("C:\\Rainmeter").unwrap();
 
     Command::new("powershell")
@@ -120,15 +124,10 @@ async fn desktopinstall(rainmeter_zip_path: String, add_start_path: String) -> S
     .unwrap();
 
     if result == () {
-        output.push_str("Installationen av Rainmeter var framgångsrik! ")
+        return "Installationen av Rainmeter var framgångsrik! ".to_string();
     } else {
-        output.push_str(&format!(
-            "Installationen av Rainmeter misslyckades, {:?}, ",
-            result
-        ))
+        return format!("Installationen av Rainmeter misslyckades, {:?}, ", result);
     }
-
-    output
 }
 
 #[tauri::command]
@@ -174,11 +173,13 @@ fn main() {
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
-            desktopinstall,
+            rm_install,
             nompxinstall,
             pyinstall,
             pai_install,
-            chrome_install
+            chrome_install,
+            ttb_install,
+            lively_install
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

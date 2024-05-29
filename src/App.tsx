@@ -14,15 +14,16 @@ async function desktopinstall() {
 		4
 	);
 
-	invoke('desktopinstall', {
-		rainmeterZipPath: rainmeter_zip_path,
-		addStartPath: add_start_path,
-	}).then((output) => {
-		changeCurrentTask(output as string, false);
-		setTimeout(() => {
-			changeCurrentTask('Ingen nuvarande uppgift', false);
-		}, 10000);
-	});
+	const [ttb_output, lively_output, rm_output] = await Promise.all([
+		invoke('ttb_install'),
+		invoke('lively_install'),
+		invoke('rm_install', {
+			rainmeterZipPath: rainmeter_zip_path,
+			addStartPath: add_start_path,
+		}),
+	]);
+
+	changeCurrentTask(`${ttb_output}${lively_output}${rm_output}`, false);
 }
 
 function changeCurrentTask(task: string, activateLoading: boolean) {
