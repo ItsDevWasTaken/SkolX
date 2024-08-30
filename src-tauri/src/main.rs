@@ -57,7 +57,7 @@ async fn ttb_install() -> String {
     let mut ttbinstallcmd = Command::new("winget")
         .args([
             "install",
-            "translucenttb",
+            "CharlesMilette.TranslucentTB",
             "--accept-package-agreements",
             "--accept-source-agreements",
         ])
