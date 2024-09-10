@@ -156,18 +156,24 @@ async fn pyinstall() {
 fn main() {
     tauri::Builder::default()
         .setup(|app| {
-            let handle = app.handle();
+            let mut handle = app.handle();
 
             let window = app.get_window("main").unwrap();
 
             set_shadow(&window, true).unwrap();
 
-            app.listen_global("about_apply_acrylic", move |_| {
+            app.listen_global("about_apply_shadow", move |_| {
                 let about_window = handle.get_window("about").unwrap();
 
                 set_shadow(&about_window, true).unwrap();
+            });
 
-                ()
+            handle = app.handle();
+
+            app.listen_global("glosPopup_apply_shadow", move |_| {
+                let glos_popup_window = handle.get_window("glosor").unwrap();
+
+                set_shadow(glos_popup_window, true).unwrap();
             });
 
             Ok(())

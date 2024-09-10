@@ -1,0 +1,120 @@
+main {
+	width: 100vw;
+	min-height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.titlebar-button {
+	background-color: rgba(15, 15, 15, 0.125);
+	width: 35px;
+	height: 30px;
+	margin-top: 3px;
+	display: flex;
+	fill: white;
+	align-items: center;
+	transition: background-color 0.2s ease-in-out;
+	justify-content: center;
+}
+.titlebar-button:hover {
+	background-color: rgba(80, 80, 80, 0.125);
+}
+#minimize {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top: 1px rgba(255, 255, 255, 0.05) solid;
+	border-bottom: 1px rgba(255, 255, 255, 0.05) solid;
+	border-left: 1px rgba(255, 255, 255, 0.05) solid;
+	border-right: none;
+}
+#close {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top: 1px rgba(255, 255, 255, 0.05) solid;
+	border-right: 1px rgba(255, 255, 255, 0.05) solid;
+	border-bottom: 1px rgba(255, 255, 255, 0.05) solid;
+	border-left: none;
+	margin-right: 15px;
+}
+#close:hover {
+	background-color: rgba(233, 70, 70, 0.25);
+}
+.glos-input {
+	height: 40px;
+	border-radius: 100px;
+	border: 1px solid rgb(255, 255, 255, 0.1);
+	background-color: rgba(31, 31, 31, 0.1);
+	outline: none;
+	caret-color: white;
+	padding-left: 20px;
+	color: white;
+	display: flex;
+	width: 80%;
+	margin-bottom: 30px;
+	font-size: 15px;
+	font-weight: 600;
+}
+#glos-inputs {
+	width: 50%;
+	display: grid;
+	justify-items: center;
+}
+.svar-input {
+	height: 40px;
+	border-radius: 100px;
+	border: 1px solid rgb(255, 255, 255, 0.1);
+	background-color: rgba(31, 31, 31, 0.1);
+	outline: none;
+	caret-color: white;
+	padding-left: 20px;
+	color: white;
+	display: flex;
+	width: 80%;
+	margin-bottom: 30px;
+	font-size: 15px;
+	font-weight: 600;
+}
+#svar-inputs {
+	width: 50%;
+	display: grid;
+	justify-items: center;
+}
+#inputs {
+	display: flex;
+	justify-content: center;
+	height: fit-content;
+	filter: drop-shadow(5px 5px 5px #00000030);
+}
+#count-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 40px;
+}
+#count-input {
+	border-radius: 10px;
+	border: 1px solid rgb(255, 255, 255, 0.1);
+	background-color: rgba(31, 31, 31, 0.1);
+	outline: none;
+	caret-color: white;
+	padding: 10px;
+	color: white;
+	display: grid;
+	width: 20px;
+	height: 20px;
+	margin-bottom: 30px;
+	font-size: 15px;
+	text-align: center;
+	font-weight: 600;
+	filter: drop-shadow(2px 2px 5px #00000030);
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+#count-input::-webkit-inner-spin-button {
+	display: none;
+}
+#arrow-icon {
+	margin-bottom: 30px;
+}

@@ -4,7 +4,7 @@ import { appWindow } from '@tauri-apps/api/window';
 import { getVersion } from '@tauri-apps/api/app';
 
 document.addEventListener('DOMContentLoaded', async function () {
-	emit('about_apply_acrylic');
+	emit('about_apply_shadow');
 
 	while (true) {
 		let version_p = document.getElementById('version');
