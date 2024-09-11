@@ -134,3 +134,20 @@ h1 {
 	color: transparent;
 	transition: all 0.2s ease-in-out;
 }
+#restart {
+	width: 20%;
+	height: 40px;
+	border-radius: 10px;
+	border: 1px solid rgb(255, 255, 255, 0.1);
+	background-color: rgba(31, 31, 31, 0.1);
+	color: white;
+	font-family: inter;
+	font-size: 15px;
+	transition: all 0.2s ease-in-out;
+}
+#restart:hover {
+	border: 1px solid transparent;
+	background-color: rgba(102, 102, 102, 0.2);
+	border-top: 1.5px rgba(255, 255, 255, 0.05) solid;
+	width: 21%;
+}

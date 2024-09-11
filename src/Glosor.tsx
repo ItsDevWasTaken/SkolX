@@ -90,7 +90,6 @@ listen<{ [key: string]: string[] }>('saved_glosor', (e) => {
 				if (key.code == 'Enter') {
 					newSvarInput.blur();
 					if (newSvarInput.value.toLowerCase() == svaret.toLowerCase()) {
-						console.log('Rätt svar!');
 						newSvarInput.disabled = true;
 						newSvarInput.style.border = '1px solid rgb(119, 255, 125)';
 						newSvarInput.style.userSelect = 'none';
@@ -112,13 +111,69 @@ listen<{ [key: string]: string[] }>('saved_glosor', (e) => {
 
 			newGlosa.textContent = glosor[svar.indexOf(svaret)];
 
-			page?.appendChild(newGlosaOchSvar);
+			const restart_button = document.getElementById('restart');
+
+			page?.insertBefore(newGlosaOchSvar, restart_button);
 
 			newGlosaOchSvar.appendChild(newGlosa);
 			newGlosaOchSvar?.appendChild(newSvarInput);
 		});
 	}
 });
+
+const restart = () => {
+	const glosor_och_svar = document.querySelectorAll('div.glosa-och-svar');
+
+	console.log(glosor_och_svar);
+
+	for (let i = 0; i < glosor_och_svar.length; i++) {
+		console.log(glosor_och_svar[i].remove());
+	}
+
+	const page = document.getElementById('page');
+
+	if (svar.length > 0 && glosor.length > 0) {
+		svar.forEach((svaret) => {
+			let newSvarInput = document.createElement('input');
+
+			newSvarInput.type = 'text';
+
+			newSvarInput.className = 'svar';
+
+			newSvarInput.addEventListener('keypress', (key) => {
+				if (key.code == 'Enter') {
+					newSvarInput.blur();
+					if (newSvarInput.value.toLowerCase() == svaret.toLowerCase()) {
+						newSvarInput.disabled = true;
+						newSvarInput.style.border = '1px solid rgb(119, 255, 125)';
+						newSvarInput.style.userSelect = 'none';
+					} else {
+						newSvarInput.disabled = true;
+						newSvarInput.style.border = '1px solid rgb(255, 91, 91)';
+						newSvarInput.style.userSelect = 'none';
+					}
+				}
+			});
+
+			let newGlosaOchSvar = document.createElement('div');
+
+			newGlosaOchSvar.className = 'glosa-och-svar';
+
+			const newGlosa = document.createElement('p');
+
+			newGlosa.className = 'glosa';
+
+			newGlosa.textContent = glosor[svar.indexOf(svaret)];
+
+			const restart_button = document.getElementById('restart');
+
+			page?.insertBefore(newGlosaOchSvar, restart_button);
+
+			newGlosaOchSvar.appendChild(newGlosa);
+			newGlosaOchSvar?.appendChild(newSvarInput);
+		});
+	}
+};
 
 function Glosor() {
 	let glos_popup: WebviewWindow;
@@ -213,6 +268,9 @@ function Glosor() {
 			<div id="page">
 				<h1>Gloshjälpare</h1>
 				<div className="divider" style={{ marginBottom: '26.8px' }}></div>
+				<button id="restart" onClick={restart}>
+					Starta om
+				</button>
 			</div>
 			<div id="background" />
 			<svg width={0} height={0} xmlns="http://www.w3.org/2000/svg">
