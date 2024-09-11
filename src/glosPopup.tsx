@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	emit('glosPopup_apply_shadow');
 });
 
+document.addEventListener('contextmenu', (e) => {
+	e.preventDefault();
+});
+
 const onCountEntered = () => {
 	const count_input = document.getElementById(
 		'count-input'

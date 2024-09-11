@@ -83,6 +83,7 @@ main {
 #inputs {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	height: fit-content;
 	filter: drop-shadow(5px 5px 5px #00000030);
 }
